@@ -5,11 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../node_modules/cordelia/dist/css/cordelia.css">
   <style>
     .creenv-gui {
       position: absolute;
-      width: 200px; height: 200px;
-      background: red;
+      width: 400px; height: 400px;
+      background: #354349;
+      color: #f2f7f9;
+      cursor: default;
+      user-select: none;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .creenv-gui.loaded {
+      overflow: auto;
+    }
+
+    .creenv-gui, .creenv-gui-input-control {      
+      font-family: Helvetica, "Open Sans", Source Sans, Arial, sans-serif;
     }
 
     .creenv-gui.top{
@@ -27,10 +42,202 @@
     .creenv-gui.bottom {
       bottom: 0;
     }
+
+    .creenv-gui.top.left {
+      border-bottom-right-radius: 3px;
+    }
+
+    .creenv-gui.top.right {
+      border-bottom-left-radius: 3px;
+    }
+
+    .creenv-gui.bottom.left {
+      border-top-right-radius: 3px;
+    }
+
+    .creenv-gui.bottom.right {
+      border-top-left-radius: 3px;
+    }
+
+    .creenv-gui-item {
+      width: 100%;
+      padding: 12px 12px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      height: 42px;
+    }
+
+    .creenv-gui-property {
+      background: rgba(255,255,255,0.1);
+      margin-top: 1px;
+    }
+
+    .creenv-gui-title {
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+      display: block;
+      box-sizing: border-box;
+      height: 33px;
+    }
+
+    .creenv-gui-folder {
+      cursor: pointer;
+    }
+
+    .creenv-gui-folder-icon {
+      display: inline-block;
+      margin: 0 8px 0 0px;
+    }
+
+    .creenv-gui-folder-container {
+      transition: height 0.5s;
+    }
+
+    .creenv-gui-item-title {
+      width: 150px;
+      overflow: hidden;
+      flex-grow: 0;
+    }
+
+    .creenv-gui-control-container {
+      flex-grow: 2;
+      padding-right: 0;
+    }
+
+    .creenv-gui-input-control {
+      width: 100%;
+      padding: 8px 10px 8px 10px;
+      border: 2px solid white;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      outline: none;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    .cdp-wrapper .cdp-container {
+      z-index: 25;
+    }
+
+    .cdp-wrapper {
+      width: 50px;
+    }
+
+    .creenv-gui-checkbox:not(:checked),
+    .creenv-gui-checkbox:checked {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .creenv-gui-checkbox:not(:checked) + label,
+    .creenv-gui-checkbox:checked + label {
+      position: relative;
+      top: -11px;
+      cursor: pointer;
+    }
+
+    .creenv-gui-checkbox:not(:checked) + label:before,
+    .creenv-gui-checkbox:checked + label:before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      width: 19px; height: 19px;
+      border: 2px solid white;
+      background: black;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+    }
+    /* checked mark aspect */
+    .creenv-gui-checkbox:not(:checked) + label:after,
+    .creenv-gui-checkbox:checked + label:after {
+      content: '';
+      display: block;
+      width: 6px; height: 13px;
+      position: absolute;
+      top: 2px; left: 8px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      transition: all .2s;
+      font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+    }
+    /* checked mark aspect changes */
+    .creenv-gui-checkbox:not(:checked) + label:after {
+      opacity: 0;
+      transform: scale(0) rotate(0);
+    }
+    .creenv-gui-checkbox:checked + label:after {
+      opacity: 1;
+      transform: scale(1) rotate(45deg);
+    }
+    /* disabled checkbox */
+    .creenv-gui-checkbox:disabled:not(:checked) + label:before,
+    .creenv-gui-checkbox:disabled:checked + label:before {
+      box-shadow: none;
+      border-color: #bbb;
+      background-color: #ddd;
+    }
+    .creenv-gui-checkbox:disabled:checked + label:after {
+      color: #999;
+    }
+    .creenv-gui-checkbox:disabled + label {
+      color: #aaa;
+    }
+
+    /* hover style just for information */
+    label:hover:before {
+      border: 2px solid #ddd !important;
+    }
     
   </style>
 </head>
 <body>
+
+  <div class="creenv-gui top right">
+    <div class="creenv-gui-title creenv-gui-item">Controls</div>
+    <div class="creenv-gui-item creenv-gui-folder">
+      <span class="creenv-gui-folder-icon">-</span><span class="creenv-gui-folder-title">Folder Name</span>
+    </div>
+    <div class="creenv-gui-folder-container">
+      <!-- text property -->
+      <div class="creenv-gui-item creenv-gui-property">
+        <div class="creenv-gui-item-title">Property Name</div>
+        <div class="creenv-gui-control-container">
+          <input type="text" class="creenv-gui-input-control">
+        </div>
+      </div>
+      <!-- color picker -->
+      <div class="creenv-gui-item creenv-gui-property">
+        <div class="creenv-gui-item-title">Color picker</div>
+        <div class="creenv-gui-control-container">
+          <div id="color-picker1"></div>
+        </div>
+      </div>
+      <!-- color picker -->
+      <div class="creenv-gui-item creenv-gui-property">
+        <div class="creenv-gui-item-title">Color picker</div>
+        <div class="creenv-gui-control-container">
+          <div id="color-picker2"></div>
+        </div>
+      </div>
+      <!-- slider -->
+      <div class="creenv-gui-item creenv-gui-property">
+        <div class="creenv-gui-item-title">a slider</div>
+        <div class="creenv-gui-control-container">
+          <div id="slider"></div>
+        </div>
+      </div>
+      <!-- slider -->
+      <div class="creenv-gui-item creenv-gui-property">
+        <div class="creenv-gui-item-title"><label for="checkbox-1">this is a checkbox</label></div>
+        <div class="creenv-gui-control-container">
+          <input type="checkbox" class="creenv-gui-checkbox" id="checkbox-1">
+          <label for="checkbox-1"></label>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <script src="./bundle.js"></script>
 </body>

@@ -2,9 +2,10 @@ var GUI = require('../lib/index');
 
 
 
-var test = new GUI();
+//var test = new GUI();
 
-console.log(test);
+//console.log(test);
+
 
 
 
@@ -29,7 +30,8 @@ var userControls = {
         property: "param1",
         min: 0, max: 150, step: 30,
         callback: val => { console.log("number updated: "+val); },
-        callbackFinished: val => { console.log("number update finished "+val); }
+        callbackFinished: val => { console.log("number update finished "+val); },
+        hudName: "Premier paramètre"
       },
 
       {
