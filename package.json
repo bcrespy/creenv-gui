@@ -1,21 +1,26 @@
 {
-  "name": "@creenv/slider",
+  "name": "@creenv/gui",
   "version": "0.0.1",
-  "description": "A simple slider, used by @creenv/gui",
+  "description": "The GUI controls used by the Creative Environment Creenv. Vanilla JS, lightweight, customizable",
   "keywords": [
     "creenv",
-    "slider"
+    "GUI",
+    "UI",
+    "slider",
+    "colorpicker",
+    "input",
+    "checkbox"
   ],
   "license": "MIT",
   "author": "Baptiste Crespy",
-  "homepage": "https://github.com/bcrespy/creenv-slider.git",
+  "homepage": "https://github.com/bcrespy/creenv-gui.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcrespy/creenv-slider.git"
+    "url": "https://github.com/bcrespy/creenv-gui.git"
   },
   "bugs": {
     "mail": "baptiste.crespy@gmail.com",
-    "url": "https://github.com/bcrespy/creenv-slider/issues"
+    "url": "https://github.com/bcrespy/creenv-gui/issues"
   },
   "main": "lib/index.js",
   "files": [
@@ -23,7 +28,7 @@
   ],
   "scripts": {
     "clean": "",
-    "start": "watchify ./src/main.js -o ./src/bundle.js --debug",
+    "start": "watchify ./src/main.js -t brfs -o ./src/bundle.js --debug",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
@@ -32,9 +37,12 @@
   "peerDependencies": {},
   "dependencies": {
     "@creenv/inject-css": "0.0.1",
-    "color-string": "^1.5.3"
+    "@creenv/slider": "^1.0.3",
+    "color-string": "^1.5.3",
+    "cordelia": "^1.0.2"
   },
   "devDependencies": {
+    "brfs": "^2.0.1",
     "cross-env": "^5.1.4",
     "watchify": "^3.11.0"
   },
