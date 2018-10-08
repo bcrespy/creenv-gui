@@ -93,6 +93,7 @@
 
     .creenv-gui-folder-container {
       transition: height 0.5s;
+      overflow: hidden;
     }
 
     .creenv-gui-item-title {
@@ -194,12 +195,12 @@
 </head>
 <body>
 
-  <div class="creenv-gui top right">
+  <div class="creenv-gui bottom left">
     <div class="creenv-gui-title creenv-gui-item">Controls</div>
-    <div class="creenv-gui-item creenv-gui-folder">
+    <div class="creenv-gui-item creenv-gui-folder" id="folder-test">
       <span class="creenv-gui-folder-icon">-</span><span class="creenv-gui-folder-title">Folder Name</span>
     </div>
-    <div class="creenv-gui-folder-container">
+    <div class="creenv-gui-folder-container opened">
       <!-- text property -->
       <div class="creenv-gui-item creenv-gui-property">
         <div class="creenv-gui-item-title">Property Name</div>

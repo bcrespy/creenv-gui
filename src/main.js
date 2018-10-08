@@ -2,10 +2,6 @@ var GUI = require('../lib/index');
 
 
 
-//var test = new GUI();
-
-//console.log(test);
-
 
 
 
@@ -50,6 +46,13 @@ var userControls = {
     ]
   ]
 }
+
+let gui = new GUI(userControls);
+
+let elem = document.getElementById("folder-test");
+let f = GUI.generateTogglingFolderFunc(elem);
+elem.addEventListener("click", f);
+
 
 
 
