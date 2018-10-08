@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "clean": "",
-    "start": "watchify ./src/main.js -o ./src/bundle.js",
+    "start": "watchify ./src/main.js -o ./src/bundle.js --debug",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
@@ -31,7 +31,8 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@creenv/inject-css": "0.0.1"
+    "@creenv/inject-css": "0.0.1",
+    "color-string": "^1.5.3"
   },
   "devDependencies": {
     "cross-env": "^5.1.4",
