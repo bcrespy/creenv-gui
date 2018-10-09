@@ -1,4 +1,4 @@
-var Color = require("../lib/index");
+//var Color = require("../lib/index");
 
 
 test("lazyness", () => {
