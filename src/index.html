@@ -27,7 +27,7 @@
       font-family: Helvetica, "Open Sans", Source Sans, Arial, sans-serif;
     }
 
-    .creenv-gui.top{
+    .creenv-gui.top {
       top: 0;
     }
 
@@ -96,11 +96,15 @@
 
     .creenv-gui-folder-container {
       transition: all 0.5s;
-      transform: scaleY(0);
+      overflow: hidden;
+    }
+
+    .creenv-gui-folder-container.picker-opened {
+      overflow: visible;
     }
 
     .creenv-gui-folder-container.opened {
-      transform: scaleY(1);
+      
     }
 
     .creenv-gui-item-title {
@@ -116,7 +120,7 @@
 
     .creenv-gui-input-control {
       width: 100%;
-      padding: 8px 10px 8px 10px;
+      padding: 6px 10px 6px 10px;
       border: 2px solid white;
       background: rgba(0,0,0,0.5);
       color: white;
