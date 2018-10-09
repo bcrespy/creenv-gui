@@ -9,7 +9,7 @@
   <style>
     .creenv-gui {
       position: absolute;
-      width: 400px; height: 400px;
+      width: 400px;
       background: #354349;
       color: #f2f7f9;
       cursor: default;
@@ -88,12 +88,18 @@
 
     .creenv-gui-folder-icon {
       display: inline-block;
-      margin: 0 8px 0 0px;
+      margin: 0 5px 0 0px;
+      width: 10px;
+      font-size: 16px;
     }
 
     .creenv-gui-folder-container {
-      transition: height 0.5s;
-      overflow: hidden;
+      transition: all 0.5s;
+      transform: scaleY(0);
+    }
+
+    .creenv-gui-folder-container.opened {
+      transform: scaleY(1);
     }
 
     .creenv-gui-item-title {
@@ -237,6 +243,10 @@
           <label for="checkbox-1"></label>
         </div>
       </div>
+    </div>
+
+    <div class="creenv-gui-item creenv-gui-folder">
+      <span class="creenv-gui-folder-icon">-</span><span class="creenv-gui-folder-title">Folder Name</span>
     </div>
   </div>
   

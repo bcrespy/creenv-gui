@@ -9,8 +9,8 @@ var GUI = require('../lib/index');
 // usage 
 var config = {
   param1: 13,
-  param2: "#17171717",
-  param3: true,
+  param2: "#FF1717",
+  param3: false,
   param4: "test"
 };
 
@@ -41,7 +41,13 @@ var userControls = {
       "other folder",
 
       {
+        property: "param3",
+        callback: val => { console.log("boolean changed: "+val) }
+      },
 
+      {
+        property: "param4",
+        callback: val => { console.log("string changed: "+val) }
       }
     ]
   ]
@@ -49,9 +55,9 @@ var userControls = {
 
 let gui = new GUI(userControls);
 
-let elem = document.getElementById("folder-test");
-let f = GUI.generateTogglingFolderFunc(elem);
-elem.addEventListener("click", f);
+
+document.addEventListener("keypress", function(){
+console.log(config) })
 
 
 
