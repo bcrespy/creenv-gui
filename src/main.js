@@ -8,7 +8,7 @@ var GUI = require('../lib/index');
 
 // usage 
 var config = {
-  param1: 13,
+  paramName: 13,
   param2: "#FF1717",
   param3: false,
   param4: "test"
@@ -23,7 +23,7 @@ var userControls = {
 
       {
         // object: config,
-        property: "param1",
+        property: "paramName",
         min: 0, max: 150, step: 30,
         callback: val => { console.log("number updated: "+val); },
         callbackFinished: val => { console.log("number update finished "+val); },
