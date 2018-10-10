@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "clean": "",
-    "start": "watchify ./src/main.js -t brfs -o ./src/bundle.js --debug",
+    "start": "watchify ./dev/main.js -t brfs -o ./dev/bundle.js --debug",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
@@ -39,7 +39,8 @@
     "@creenv/inject-css": "0.0.1",
     "@creenv/slider": "^1.0.5",
     "color-string": "^1.5.3",
-    "cordelia": "^1.0.2"
+    "cordelia": "^1.0.2",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "brfs": "^2.0.1",
