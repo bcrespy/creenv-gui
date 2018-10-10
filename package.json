@@ -32,7 +32,8 @@
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
-    "prepublish": "npm run test"
+    "prepublish": "npm run test",
+    "doc": "jsdoc2md -f lib/index.js > API.md; echo"
   },
   "peerDependencies": {},
   "dependencies": {
@@ -45,6 +46,7 @@
   "devDependencies": {
     "brfs": "^2.0.1",
     "cross-env": "^5.1.4",
+    "jsdoc-to-markdown": "^4.0.1",
     "watchify": "^3.11.0"
   },
   "jest": {
