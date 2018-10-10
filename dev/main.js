@@ -1,4 +1,4 @@
-var GUI = require('../lib/index');
+import GUI from '../lib/index'
 
 
 
