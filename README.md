@@ -1,6 +1,6 @@
 # Creenv GUI
 
-The Creative Environment Graphical User Interace solves 2 issues you may have met trying to add controls to your projects: redundancy and lack of control. Using the strength of es6 files encapsulation, you will now be able to define a controllable config on your creative projects. 
+**@creenv/gui** is the gui used within the Creative Environment project. It is bundled with *Creenv* by default. The Creative Environment Graphical User Interace solves 2 issues you may have met trying to add controls to your projects: redundancy and too much of a trouble to setup. Using the strength of es6 files encapsulation, you will now be able to define a controllable config on your creative projects. 
 
 ## Show me how it's done
 
@@ -14,7 +14,7 @@ So, without splitting the objects into multiple files for readability (as it is 
 // the config 
 var config = {
   strength: 13,
-  background: "#FF1717",
+  background: new Color(255,25,255,0.8), // can also be a string, ex: #efef17
   isGlowActive: false,
   textToDisplay: "test"
 };
@@ -101,4 +101,4 @@ let controls = {
 }
 ```
 
-The philosophy behind this architecture is to create you config object with default values, that will be used at the initialization of your app. In the render loop, the config values are used by algorithms, and because those values are changed in real time, the algorithms will use those new values. There is no need for callback mechanism, even though it is available, because required in some cases. 
+**The philosophy behind this architecture is to create you config object with default values, that will be used at the initialization of your app. In the render loop, the config values are used by algorithms, and because those values are changed in real time, the algorithms will use those new values. There is no need for callback mechanism, even though it is available, because required in some cases.**

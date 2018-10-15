@@ -1,19 +1,18 @@
-import GUI from '../lib/index'
-
-
-
-
+import GUI from '../lib/index';
+import Color from '@creenv/color';
 
 
 
 // usage 
 var config = {
   paramName: 13,
-  param2: "#FF1717",
+  param2: new Color(50,20,50,0.5),
   param3: false,
   param4: "test",
-  p: "rgb(255,0,255)"
+  p: new Color(50,20,50,0.5)
 };
+
+
 
 var userControls = {
   object: config, 
@@ -33,8 +32,8 @@ var userControls = {
 
       {
         property: "param2", 
-        callback: val => { console.log("new rgba color: "+val); },
-        callbackFinished: val => { console.log("new rgba color: "+val); }
+        callback: val => { console.log("new rgba color: "+val.string); },
+        callbackFinished: val => { console.log("new rgba color: "+val.string); }
       }
     ],
 
