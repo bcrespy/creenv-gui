@@ -38,6 +38,7 @@
   "peerDependencies": {},
   "dependencies": {
     "@creenv/color": "^1.2.0",
+    "@creenv/colorpicker": "^0.3.2",
     "@creenv/inject-css": "0.0.1",
     "@creenv/slider": "^1.0.6",
     "color-string": "^1.5.3",
@@ -47,7 +48,6 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "@creenv/colorpicker": "^0.3.2",
     "babel-loader": "^8.0.4",
     "brfs": "^2.0.1",
     "clean-webpack-plugin": "^0.1.19",
