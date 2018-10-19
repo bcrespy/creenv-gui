@@ -37,9 +37,10 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@creenv/color": "^1.0.1",
+    "@creenv/color": "^1.2.0",
+    "@creenv/colorpicker": "0.0.1",
     "@creenv/inject-css": "0.0.1",
-    "@creenv/slider": "^1.0.5",
+    "@creenv/slider": "^1.0.6",
     "color-string": "^1.5.3",
     "cordelia": "^1.0.2",
     "uniqid": "^5.0.3"
