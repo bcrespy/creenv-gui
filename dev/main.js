@@ -57,7 +57,7 @@ var userControls = {
   ]
 }
 
-let gui = new GUI(userControls);
+let gui = new GUI(userControls, GUI.POSITION.BOTTOM_LEFT);
 
 
 document.addEventListener("keypress", function(){
