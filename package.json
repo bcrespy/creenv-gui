@@ -24,7 +24,7 @@
   },
   "main": "lib/index.js",
   "files": [
-    "/lib"
+    "lib"
   ],
   "scripts": {
     "clean": "",
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "@creenv/colorpicker": "^0.2.0",
+    "@creenv/colorpicker": "^0.3.2",
     "babel-loader": "^8.0.4",
     "brfs": "^2.0.1",
     "clean-webpack-plugin": "^0.1.19",

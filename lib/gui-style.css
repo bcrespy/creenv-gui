@@ -210,3 +210,7 @@
 label:hover:before {
   border: 2px solid #ddd !important;
 }
+
+.creenv-colorpicker-picking-box {
+  z-index: 40;
+}
