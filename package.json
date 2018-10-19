@@ -1,6 +1,6 @@
 {
   "name": "@creenv/gui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The GUI controls used by the Creative Environment Creenv. Vanilla JS, lightweight, customizable",
   "keywords": [
     "creenv",
