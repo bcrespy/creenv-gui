@@ -38,11 +38,11 @@
   "peerDependencies": {},
   "dependencies": {
     "@creenv/color": "^1.2.0",
-    "@creenv/colorpicker": "^0.3.2",
+    "@creenv/colorpicker": "^0.3.3",
+    "@creenv/hud-element": "0.0.2",
     "@creenv/inject-css": "0.0.1",
     "@creenv/slider": "^1.0.6",
     "color-string": "^1.5.3",
-    "cordelia": "^1.0.2",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {

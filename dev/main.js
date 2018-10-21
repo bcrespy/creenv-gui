@@ -33,7 +33,13 @@ var userControls = {
       {
         property: "param2", 
         callback: val => { console.log("new rgba color: "+val.string); },
-        callbackFinished: val => { console.log("new rgba color: "+val.string); }
+        options: {
+          suggestions: [
+            new Color(255,20,50),
+            new Color(255,0,0),
+            new Color(20,50,250, 0.5)
+          ]
+        }
       }
     ],
 
@@ -58,11 +64,3 @@ var userControls = {
 }
 
 let gui = new GUI(userControls, GUI.POSITION.BOTTOM_LEFT);
-
-
-document.addEventListener("keypress", function(){
-gui.getCurrentParams(); })
-
-
-
-//https://www.npmjs.com/package/pickr-widget
