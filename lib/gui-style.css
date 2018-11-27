@@ -124,6 +124,8 @@
 .creenv-gui-control-container {
   flex-grow: 2;
   padding-right: 0;
+  display: flex;
+  align-items: center;
 }
 
 .creenv-gui-input-control {
@@ -222,21 +224,48 @@ label:hover:before {
 }
 
 .creenv-gui-knob {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   border-radius: 200px;
-  background: red;
+  background: rgba(0,0,0,0.4);
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .creenv-gui-knob-bar {
-  width: 5px;
+  width: 4px;
   height: 48%;
-  background: blue;
+  background: white;
   position: absolute;
+  border-radius: 8px;
   left: 50%;
   bottom: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 2px);
+}
+
+.creenv-gui-knob-value {
+  margin-left: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.creenv-gui-button {
+  display: block;
+  width: 54px;;
+  height: 26px;
+  border-bottom: 4px solid rgba(0,0,0,0.15);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  transition: 150ms ease;
+  font-weight: bold;
+}
+
+.creenv-gui-button.active {
+  box-shadow: 0px 1px 6px #00ff00;
+  background: rgba(100, 255, 100, 0.5);
+  border-bottom: 4px solid rgba(0,0,0,0.15);
 }

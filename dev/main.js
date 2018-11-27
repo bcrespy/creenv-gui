@@ -9,7 +9,9 @@ var config = {
   param2: new Color(50,20,50,0.5),
   param3: false,
   param4: "test",
-  p: new Color(50,20,50,0.5)
+  p: new Color(50,20,50,0.5),
+  t: 10,
+  lol: true
 };
 
 
@@ -17,6 +19,24 @@ var config = {
 var userControls = {
   object: config, 
   controls: [
+
+    {
+      property: "t",
+      midi: true,
+      onChange: val => { console.log(val); },
+      min: 0, max: 100,
+      step: 5,
+      id: 16
+    },
+
+    {
+      property: "lol",
+      midi: true,
+      onPress: val => { console.log(val); },
+      active: config.lol,
+      unique: false,
+      id: 1
+    },
 
     [
       "folder name",
