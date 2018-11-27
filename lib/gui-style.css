@@ -62,7 +62,6 @@
 .creenv-gui-item {
   width: 100%;
   padding: 12px 12px;
-  height: 20px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -213,4 +212,31 @@ label:hover:before {
 
 .creenv-colorpicker-picking-box {
   z-index: 40;
+}
+
+.creenv-gui-knob-container {
+  height: 42px;
+  width: 42px;
+  position: relative;
+  transform: rotate(-135deg);
+}
+
+.creenv-gui-knob {
+  width: 80%;
+  height: 80%;
+  border-radius: 200px;
+  background: red;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.creenv-gui-knob-bar {
+  width: 5px;
+  height: 48%;
+  background: blue;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
 }
