@@ -14,6 +14,11 @@ var config = {
   lol: true
 };
 
+var config2 = {
+  prop1: 7,
+  propLol: "lol"
+}
+
 
 
 var userControls = {
@@ -27,6 +32,13 @@ var userControls = {
       min: 0, max: 100,
       step: 5,
       id: 16
+    },
+
+    {
+      object: config2,
+      property: "prop1",
+      min: 0, max: 20,
+      callback: console.log
     },
 
     {
