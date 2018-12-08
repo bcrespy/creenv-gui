@@ -41,7 +41,7 @@
     "@creenv/colorpicker": "^0.3.3",
     "@creenv/hud-element": "0.0.2",
     "@creenv/inject-css": "0.0.1",
-    "@creenv/midi": "^0.1.2",
+    "@creenv/midi": "^1.0.0",
     "@creenv/slider": "^1.0.6",
     "color-string": "^1.5.3",
     "uniqid": "^5.0.3"
