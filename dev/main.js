@@ -95,4 +95,4 @@ var userControls = {
   ]
 }
 
-let gui = new GUI(userControls, GUI.POSITION.BOTTOM_LEFT);
+let gui = new GUI(userControls, GUI.POSITION.BOTTOM_LEFT, true, true);
